@@ -159,7 +159,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 48px 40px;
+    padding: 56px 40px;
     background: #FFFFFF;
 }
 .cardinal-panel-inner {
@@ -170,6 +170,8 @@
     max-width: 400px;
     margin: 0 auto;
     min-width: 0;
+    padding-top: 48px;
+    padding-bottom: 24px;
 }
 .cardinal-intro {
     display: flex;
@@ -382,6 +384,7 @@
     flex-direction: column;
     gap: 10px;
     padding-top: 24px;
+    padding-bottom: 24px;
     border-top: 1px solid #E4E4E8;
 }
 .cardinal-powered-label {
@@ -436,6 +439,25 @@
     font-size: 11px;
     letter-spacing: 0.06em;
     color: #6B6B72;
+}
+
+@media (min-width: 1200px) and (min-height: 701px) {
+    .cardinal-panel {
+        flex-basis: 25%;
+        padding: 32px;
+    }
+    .cardinal-panel-inner {
+        gap: 12px;
+        padding-top: 32px;
+        padding-bottom: 16px;
+    }
+    .cardinal-form { gap: 10px; }
+    .cardinal-alt { gap: 12px; }
+    .cardinal-powered {
+        gap: 4px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
 }
 
 /* ---------- Messages ---------- */
@@ -572,7 +594,7 @@ body.dimmed::before {
     .cardinal-hero { padding: 56px 56px; }
     .cardinal-headline { font-size: clamp(48px, 6vw, 60px); }
     .cardinal-tagline { font-size: 18px; }
-    .cardinal-panel { padding: 40px 32px; }
+    .cardinal-panel { padding: 48px 32px; }
 }
 
 /* ---------- Tablet: stacked ---------- */
@@ -595,7 +617,7 @@ body.dimmed::before {
     .cardinal-panel {
         flex: 1 0 auto;
         justify-content: flex-start;
-        padding: 48px;
+        padding: 56px 48px;
     }
     .cardinal-panel-inner { max-width: 440px; }
 }
@@ -622,7 +644,7 @@ body.dimmed::before {
     .cardinal-eyebrow { font-size: 11px; }
     .cardinal-headline { font-size: 36px; }
     .cardinal-tagline { font-size: 15px; }
-    .cardinal-panel { padding: 32px 24px 40px; }
+    .cardinal-panel { padding: 40px 24px 48px; }
     .cardinal-panel-inner { gap: 24px; max-width: none; }
     .cardinal-title { font-size: 26px; }
     .cardinal-field input { height: 48px; font-size: 16px; }
@@ -638,7 +660,7 @@ body.dimmed::before {
     .cardinal-brand-name { font-size: 16px; letter-spacing: 0.1em; }
     .cardinal-brand-product svg { width: 24px; height: 24px; }
     .cardinal-headline { font-size: 32px; }
-    .cardinal-panel { padding: 28px 20px 36px; }
+    .cardinal-panel { padding: 36px 20px 44px; }
     .cardinal-code { gap: 6px; }
     .cardinal .lockt-2fabox { height: 46px; font-size: 20px; }
 }
@@ -658,7 +680,7 @@ body.dimmed::before {
 @media (min-width: 901px) and (max-height: 700px) {
     .cardinal-hero { padding-top: 40px; padding-bottom: 40px; }
     .cardinal-headline { font-size: 52px; }
-    .cardinal-panel { padding-top: 24px; padding-bottom: 24px; }
+    .cardinal-panel { padding-top: 32px; padding-bottom: 32px; }
     .cardinal-panel-inner { gap: 18px; }
     .cardinal-powered { gap: 6px; padding-top: 16px; }
     .cardinal-powered-logo { width: 160px; }
@@ -670,7 +692,7 @@ body.dimmed::before {
     .cardinal-hero { gap: 24px; padding-top: 21px; padding-bottom: 21px; }
     .cardinal-headline { font-size: 46px; }
     .cardinal-tagline { font-size: 17px; }
-    .cardinal-panel { padding-top: 16px; padding-bottom: 16px; }
+    .cardinal-panel { padding-top: 24px; padding-bottom: 24px; }
     .cardinal-panel-inner { gap: 14px; }
     .cardinal-powered { gap: 4px; padding-top: 10px; }
     .cardinal-powered-logo { width: 145px; }
