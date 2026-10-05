@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#C81D1D">
+    <title>Lockt Cardinal</title>
+    <link rel="icon" href="/assets/images/cardinal/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/login_cardinal.css">
+</head>
+<body class="cardinal-body">
+    <main class="cardinal">
+        <section class="cardinal-hero">
+            <svg class="cardinal-hero-mark" viewBox="0 0 48 48" width="760" height="760" aria-hidden="true">
+                <path d="M6 42 L22 6 L29 19 L42 16 L34 28 L42 42 Z" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linejoin="round"></path>
+            </svg>
+
+            <div class="cardinal-brand">
+                <img class="cardinal-brand-lockt" src="/assets/images/cardinal/Lockt.png" alt="Lockt" width="136" height="42">
+                <span class="cardinal-brand-divider" aria-hidden="true"></span>
+                <span class="cardinal-brand-product">
+                    <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+                        <path d="M6 42 L22 6 L29 19 L42 16 L34 28 L42 42 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+                        <circle cx="27" cy="27" r="3" fill="#C81D1D"></circle>
+                    </svg>
+                    <span class="cardinal-brand-name">CARDINAL</span>
+                </span>
+            </div>
+
+            <div class="cardinal-hero-copy">
+                <div class="cardinal-eyebrow">LOCKT RED</div>
+                <h1 class="cardinal-headline">Every door.<br>One platform.</h1>
+                <p class="cardinal-tagline">Cloud access control built for Dormakaba hardware.</p>
+            </div>
+
+            <div class="cardinal-hero-footer">
+                <span>cardinal.lockt.com</span>
+                <span>&copy; 2026 Lockt</span>
+            </div>
+        </section>
+
+        <section class="cardinal-panel">
+            <div class="cardinal-panel-inner">
+                <div class="cardinal-intro">
+                    <h2 class="cardinal-title">Sign in</h2>
+                    <p class="cardinal-subtitle">Use your Cardinal account.</p>
+                </div>
+
+                <form id="login_form" class="cardinal-form" onsubmit="return false">
+                    <div class="cardinal-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="you@company.com" autocomplete="username">
+                    </div>
+                    <div class="cardinal-field">
+                        <div class="cardinal-field-row">
+                            <label for="password">Password</label>
+                            <button type="button" class="cardinal-link" id="forgot_pass" data-hover="Password reset is temporarily unavailable">Forgot?</button>
+                        </div>
+                        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+                    </div>
+                    <div class="cardinal-check">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Keep me signed in</label>
+                    </div>
+                    <button type="button" class="cardinal-btn cardinal-btn-primary" id="ac_account_check" data-hover="Sign in securely">Sign in</button>
+                </form>
+
+                <div id="loginFooter" class="cardinal-alt">
+                    <div class="cardinal-or" aria-hidden="true"><span>OR</span></div>
+                    <a class="cardinal-btn cardinal-btn-outline" href="/sso" data-hover="Continue with single sign-on"><span>Continue with SSO</span></a>
+                    <p class="cardinal-help">Need access? Contact your site administrator.</p>
+                </div>
+
+                <div class="cardinal-powered">
+                    <span class="cardinal-powered-label">POWERED BY</span>
+                    <img class="cardinal-powered-logo" src="/assets/images/cardinal/dormakaba.png" alt="dormakaba" width="2170" height="725">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var feedback;
+            function showFeedback(message) {
+                if (!feedback) {
+                    feedback = document.createElement('div');
+                    feedback.className = 'cardinal-feedback';
+                    document.querySelector('.cardinal-panel').appendChild(feedback);
+                }
+                feedback.textContent = message;
+                feedback.classList.add('is-visible');
+                window.clearTimeout(feedback.timeout);
+                feedback.timeout = window.setTimeout(function () {
+                    feedback.classList.remove('is-visible');
+                }, 1800);
+            }
+            document.querySelectorAll('.cardinal-btn').forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    if (button.tagName === 'A') event.preventDefault();
+                    showFeedback(button.id === 'forgot_pass' ? 'Password reset is temporarily unavailable' : 'Visual preview only');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
